@@ -140,6 +140,7 @@
     <p>When a customer chooses to verify with an ID in Apple Wallet, Wallet shows exactly which details the app is asking for and whether the app intends to store them. Nothing is shared until the customer approves the request with Face ID or Touch ID, and they can decline at any point.</p>
     <p>Data received from Apple Wallet is used only to verify age and identity for this account application. It is not used for marketing and is never sold. The only data shared outside the developer's server is the ID photo, which goes to Entrust as described below.</p>
     <p>The developer's verification server decrypts the response, confirms each detail matches what the issuing authority signed, and checks the issuer and device signatures. It then returns the details, including the ID photo, to the app, which shows them on the application summary. Neither the server nor the app writes them to disk or to a log.</p>
+    <p>The verification server runs on Cloudflare Workers, operated by Cloudflare, Inc. as a hosting provider to the developer. All traffic between the app and the server is encrypted with HTTPS, and Cloudflare handles the data only to run the server. See Cloudflare's <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">privacy policy</a>.</p>
   </section>
 
   <section>
