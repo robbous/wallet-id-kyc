@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wallet ID for KYC Privacy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,500;7..72,600&family=Public+Sans:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400&display=swap">
+<style>
+  /* Layout: single reading column, a data inventory table, quiet section rules. */
+  :root {
+    --bg: #f7f9fa;
+    --surface: #ffffff;
+    --fg: #17242b;
+    --muted: #55656e;
+    --rule: #d9e1e5;
+    --accent: #0f5f6e;
+    --font-display: "Literata", Georgia, "Times New Roman", serif;
+    --font-body: "Public Sans", -apple-system, "Segoe UI", Roboto, sans-serif;
+    --font-mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #11181c; --surface: #172127; --fg: #e3eaed; --muted: #9aabb3; --rule: #2a3940; --accent: #6cc3d1;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #11181c; --surface: #172127; --fg: #e3eaed; --muted: #9aabb3; --rule: #2a3940; --accent: #6cc3d1;
+    color-scheme: dark;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--fg);
+    font: 16px/1.65 var(--font-body);
+    padding-left: max(16px, env(safe-area-inset-left, 0px));
+    padding-right: max(16px, env(safe-area-inset-right, 0px));
+    padding-block: 48px 72px;
+  }
+  main { max-width: 46rem; margin: 0 auto; display: flex; flex-direction: column; gap: 40px; }
+
+  header { display: flex; flex-direction: column; gap: 12px; padding-bottom: 28px; border-bottom: 1px solid var(--rule); }
+  .eyebrow { font: 12px/1.4 var(--font-mono); letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); }
+  h1 { font: 600 clamp(28px, 5vw, 38px)/1.15 var(--font-display); margin: 0; text-wrap: balance; }
+  h2 { font: 600 22px/1.3 var(--font-display); margin: 0; text-wrap: balance; }
+  h3 { font: 600 16px/1.4 var(--font-body); margin: 0; }
+  p, ul { margin: 0; max-width: 65ch; }
+  ul { padding-left: 1.2em; display: flex; flex-direction: column; gap: 6px; }
+  .meta { color: var(--muted); font-size: 14px; }
+  .meta dl { display: grid; grid-template-columns: max-content 1fr; gap: 4px 16px; margin: 0; }
+  .meta dt { font-weight: 600; color: var(--fg); }
+  .meta dd { margin: 0; min-width: 0; overflow-wrap: anywhere; }
+
+  section { display: flex; flex-direction: column; gap: 14px; }
+  a { color: var(--accent); text-underline-offset: 2px; }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 2px; }
+  code, .mono { font-family: var(--font-mono); font-size: 0.9em; }
+
+  .notice {
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+    padding: 16px 18px;
+    display: flex; flex-direction: column; gap: 8px;
+  }
+
+  .table-wrap { overflow-x: auto; border: 1px solid var(--rule); border-radius: 6px; background: var(--surface); }
+  table { border-collapse: collapse; width: 100%; min-width: 640px; font-size: 14px; line-height: 1.5; }
+  th, td { text-align: left; vertical-align: top; padding: 12px 14px; border-bottom: 1px solid var(--rule); }
+  tr:last-child td { border-bottom: 0; }
+  th { font: 600 11px/1.4 var(--font-mono); letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+  td:first-child { font-weight: 600; width: 22%; }
+
+  footer { color: var(--muted); font-size: 14px; border-top: 1px solid var(--rule); padding-top: 20px; }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <span class="eyebrow">Privacy policy</span>
+    <h1>Wallet ID for KYC</h1>
+    <p>This policy explains what the Wallet ID for KYC app collects, why, who processes it, and how long it is kept.</p>
+    <div class="meta">
+      <dl>
+        <dt>Effective</dt><dd>November 3, 2026</dd>
+        <dt>Developer</dt><dd>Roberto Carisi, independent developer</dd>
+        <dt>App</dt><dd>Wallet ID for KYC (<span class="mono">com.robertocarisi.walletreader</span>)</dd>
+        <dt>Contact</dt><dd><span class="mono">carisi.roberto@gmail.com</span></dd>
+      </dl>
+    </div>
+  </header>
+
+  <section class="notice" aria-label="About this app">
+    <h3>This is a prototype, not a bank</h3>
+    <p>The app demonstrates a bank account opening flow with identity verification. It does not open accounts, move money, or offer financial services. It is distributed only to the developer's own devices and to invited TestFlight testers, all adults who have agreed to take part.</p>
+  </section>
+
+  <section>
+    <h2>What the app collects</h2>
+    <p>Customers verify their identity in one of two ways: with an ID stored in Apple Wallet, or by photographing an ID and taking a selfie through Entrust Identity Verification. Only the data for the method the customer chooses is collected.</p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th scope="col">Data</th><th scope="col">Purpose</th><th scope="col">Who processes it</th><th scope="col">Retention</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Name and email entered in the app</td>
+            <td>Shown back on the application summary. The name is also used to create the verification record when the customer uses Entrust Identity Verification.</td>
+            <td>Kept on the device. The email never leaves the device. The name is sent to Entrust only on the Entrust path.</td>
+            <td>Cleared when the customer taps Start over or closes the app.</td>
+          </tr>
+          <tr>
+            <td>Apple Wallet ID data</td>
+            <td>Confirm the customer is 18 or over and confirm their identity. Requested elements: age over 18, given name, family name, ID photo, and for passport-based Digital IDs, document number and issuing authority. The ID photo is also the reference for a selfie match.</td>
+            <td>Encrypted by Apple Wallet on the device and readable only by the developer's verification server, which decrypts and checks it and sends the details back to the app for display. The ID photo is also sent to Entrust Corporation, as a service provider to the developer, for the selfie match.</td>
+            <td>ID photo: kept by Entrust for up to 30 days, then deleted. All other details: not stored. Held in memory only while they are checked and shown on the application summary, then cleared.</td>
+          </tr>
+          <tr>
+            <td>ID document images, selfie and document data</td>
+            <td>Verify the ID is genuine and that the selfie matches the ID photo.</td>
+            <td>Entrust Corporation (Entrust Identity Verification, formerly Onfido), as a service provider to the developer.</td>
+            <td>Deleted from Entrust within 30 days of the test session.</td>
+          </tr>
+          <tr>
+            <td>Device and session diagnostics</td>
+            <td>Operate the capture flow and detect fraud, such as tampered images or emulated devices.</td>
+            <td>Entrust Corporation, through its capture SDK.</td>
+            <td>Handled under Entrust's privacy policies, linked below.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2>Apple Wallet IDs</h2>
+    <p>When a customer chooses to verify with an ID in Apple Wallet, Wallet shows exactly which details the app is asking for and whether the app intends to store them. Nothing is shared until the customer approves the request with Face ID or Touch ID, and they can decline at any point.</p>
+    <p>Data received from Apple Wallet is used only to verify age and identity for this account application. It is not used for marketing and is never sold. The only data shared outside the developer's server is the ID photo, which goes to Entrust as described below.</p>
+    <p>The developer's verification server decrypts the response, confirms each detail matches what the issuing authority signed, and checks the issuer and device signatures. It then returns the details, including the ID photo, to the app, which shows them on the application summary. Neither the server nor the app writes them to disk or to a log.</p>
+  </section>
+
+  <section>
+    <h2>Entrust Identity Verification</h2>
+    <p>Entrust Identity Verification is used in two ways, and each asks for consent before capture starts:</p>
+    <ul>
+      <li>After an Apple Wallet verification, the customer takes a short selfie video. Entrust compares it with the ID photo from Apple Wallet, to confirm the person holding the phone is the person on the ID. No document is photographed in this flow.</li>
+      <li>Customers without an ID in Apple Wallet photograph a driver's license or passport and take a selfie instead. The selfie is compared with the photo on that ID.</li>
+    </ul>
+    <p>Wallet ID photos, selfies and document images are deleted from Entrust within 30 days of the test session. Each comparison is a facial scan, carried out by Entrust only to confirm the person presenting the ID is its holder. See Entrust's <a href="https://www.entrust.com/legal-compliance/data-privacy/facial-scan-policy-and-release" target="_blank" rel="noopener">Facial Scan and Voice Recording Policy</a> and its <a href="https://www.entrust.com/legal-compliance/data-privacy" target="_blank" rel="noopener">Data Privacy</a> page.</p>
+  </section>
+
+  <section>
+    <h2>What the app does not do</h2>
+    <ul>
+      <li>It does not sell, rent or share personal data for advertising or marketing.</li>
+      <li>It contains no advertising and no third-party analytics or tracking.</li>
+      <li>It does not keep a copy of ID data, images or selfies on the device.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Your choices</h2>
+    <ul>
+      <li>You can decline the Apple Wallet request, or exit the Entrust capture flow, at any time.</li>
+      <li>You can ask for any data held about you to be deleted, or ask what is held, by writing to the contact address above. Requests are answered within 30 days.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Age</h2>
+    <p>The app is for adults only. It is not directed at anyone under 18.</p>
+  </section>
+
+  <section>
+    <h2>Changes to this policy</h2>
+    <p>If this policy changes, the effective date above is updated and testers are told through TestFlight before the change applies.</p>
+  </section>
+
+  <footer>Wallet ID for KYC · Privacy policy effective November 3, 2026</footer>
+</main>
+</body>
+</html>
