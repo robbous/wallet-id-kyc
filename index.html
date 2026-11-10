@@ -84,7 +84,7 @@
     <p>This policy explains what the Wallet ID for KYC app collects, why, who processes it, and how long it is kept.</p>
     <div class="meta">
       <dl>
-        <dt>Effective</dt><dd>November 3, 2026</dd>
+        <dt>Effective</dt><dd>November 10, 2026</dd>
         <dt>Developer</dt><dd>Roberto Carisi, independent developer</dd>
         <dt>App</dt><dd>Wallet ID for KYC (<span class="mono">com.robertocarisi.walletreader</span>)</dd>
         <dt>Contact</dt><dd><span class="mono">carisi.roberto@gmail.com</span></dd>
@@ -154,6 +154,20 @@
   </section>
 
   <section>
+    <h2>Sharing results</h2>
+    <p>After a verification, a tester can tap Share results to send a summary image and a text log through the iPhone share sheet, to a destination they choose. Nothing is sent unless the tester taps the button and picks where it goes.</p>
+    <p>Both files are built on the phone and leave out the holder's details: no name, document number, ID photo or selfie. They contain:</p>
+    <ul>
+      <li>whether each requested item was returned by Apple Wallet, never its value;</li>
+      <li>the name of the issuing authority, which identifies the issuer, not the holder;</li>
+      <li>the result of each check, the steps of the flow with their timings, and the outcome;</li>
+      <li>the device model, iOS version and app version;</li>
+      <li>the Entrust workflow run ID.</li>
+    </ul>
+    <p>The workflow run ID points to the verification record Entrust holds, so it is treated as personal data. The developer uses it only to find that record, to investigate a problem or to delete it on request. The latest summary and log stay in the app's storage on the device until the next verification replaces them or the app is deleted.</p>
+  </section>
+
+  <section>
     <h2>What the app does not do</h2>
     <ul>
       <li>It does not sell, rent or share personal data for advertising or marketing.</li>
@@ -180,7 +194,7 @@
     <p>If this policy changes, the effective date above is updated and testers are told through TestFlight before the change applies.</p>
   </section>
 
-  <footer>Wallet ID for KYC · Privacy policy effective November 3, 2026</footer>
+  <footer>Wallet ID for KYC · Privacy policy effective November 10, 2026</footer>
 </main>
 </body>
 </html>
