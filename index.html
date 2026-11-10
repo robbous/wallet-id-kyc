@@ -84,7 +84,7 @@
     <p>This policy explains what the Wallet ID for KYC app collects, why, who processes it, and how long it is kept.</p>
     <div class="meta">
       <dl>
-        <dt>Effective</dt><dd>November 10, 2026</dd>
+        <dt>Effective</dt><dd>November 11, 2026</dd>
         <dt>Developer</dt><dd>Roberto Carisi, independent developer</dd>
         <dt>App</dt><dd>Wallet ID for KYC (<span class="mono">com.robertocarisi.walletreader</span>)</dd>
         <dt>Contact</dt><dd><span class="mono">carisi.roberto@gmail.com</span></dd>
@@ -114,7 +114,7 @@
           </tr>
           <tr>
             <td>Apple Wallet ID data</td>
-            <td>Confirm the customer is 18 or over and confirm their identity. Requested elements: age over 18, given name, family name, document number, issuing authority and ID photo. The ID photo is also the reference for a selfie match.</td>
+            <td>Confirm the customer is 18 or over and confirm their identity. Requested elements: age over 18, given name, family name, date of birth, address, document number, issuing authority and ID photo. The ID photo is also the reference for a selfie match.</td>
             <td>Encrypted by Apple Wallet on the device and readable only by the developer's verification server, which decrypts and checks it and sends the details back to the app for display. The ID photo is also sent to Entrust Corporation, as a service provider to the developer, for the selfie match.</td>
             <td>ID photo: kept by Entrust for up to 30 days, then deleted. All other details: not stored. Held in memory only while they are checked and shown on the application summary, then cleared.</td>
           </tr>
@@ -156,7 +156,7 @@
   <section>
     <h2>Sharing results</h2>
     <p>After a verification, a tester can tap Share results to send a summary image and a text log through the iPhone share sheet, to a destination they choose. Nothing is sent unless the tester taps the button and picks where it goes.</p>
-    <p>Both files are built on the phone and leave out the holder's details: no name, document number, ID photo or selfie. They contain:</p>
+    <p>Both files are built on the phone and leave out the holder's details: no name, date of birth, address, document number, ID photo or selfie. They contain:</p>
     <ul>
       <li>whether each requested item was returned by Apple Wallet, never its value;</li>
       <li>the name of the issuing authority, which identifies the issuer, not the holder;</li>
@@ -194,7 +194,7 @@
     <p>If this policy changes, the effective date above is updated and testers are told through TestFlight before the change applies.</p>
   </section>
 
-  <footer>Wallet ID for KYC · Privacy policy effective November 10, 2026</footer>
+  <footer>Wallet ID for KYC · Privacy policy effective November 11, 2026</footer>
 </main>
 </body>
 </html>
