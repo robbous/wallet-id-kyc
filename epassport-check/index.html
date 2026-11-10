@@ -102,7 +102,8 @@
       <tbody>
         <tr><td>Photo of the document</td><td>On-device text recognition (Apple Vision) to read the machine readable zone, printed fields and face.</td><td>Held in memory while the app is open. Not saved, not uploaded.</td></tr>
         <tr><td>Chip data (name, dates, document number, portrait, certificates)</td><td>Read over NFC with the key printed on the document, to compare with the photo and verify the chip's signatures.</td><td>Held in memory while the app is open. Not saved, not uploaded.</td></tr>
-        <tr><td>Diagnostics log</td><td>Records the steps of the last chip read and the integrity results, to help fix read failures.</td><td>Saved in the app's own storage on your phone. It contains no names, dates, document numbers or machine readable zone. It leaves your phone only if you tap Share diagnostics and choose where to send it.</td></tr>
+        <tr><td>Diagnostics log</td><td>Records the steps of the last chip read and the integrity results, to help fix read failures.</td><td>Saved in the app's own storage on your phone. It contains no names, dates, document numbers or machine readable zone. It leaves your phone only if you tap Share results and choose where to send it.</td></tr>
+        <tr><td>Summary image</td><td>A picture of the verdict, the chip integrity checks and which fields matched, so a tester can show the result without showing the document.</td><td>Drawn on your phone from the result, not captured from the screen. It shows match results only, never the values: no names, dates, document numbers, machine readable zone or portrait. Saved in the app's own storage; it leaves your phone only if you tap Share results.</td></tr>
       </tbody>
     </table></div>
   </section>
@@ -118,7 +119,7 @@
 
   <section>
     <h2>Android version</h2>
-    <p>The Android build is a signed APK distributed from this site for testing. It behaves the same way: text recognition and face detection run on the phone with bundled models, the chip is read over NFC, and nothing is uploaded. Its only permission is NFC. It has no internet permission, so it cannot send data anywhere. Photos come from the system camera app or the system photo picker. Its <strong>Share results</strong> button sends the diagnostics log plus a summary image of the verdict, the integrity checks and which fields matched. The image shows match results only, never the values: no names, dates, document numbers, machine readable zone or portrait. Both files are created on the phone and leave it only if you tap Share results and choose where to send them.</p>
+    <p>The Android build is a signed APK distributed from this site for testing. It behaves the same way: text recognition and face detection run on the phone with bundled models, the chip is read over NFC, and nothing is uploaded. Its only permission is NFC. It has no internet permission, so it cannot send data anywhere. Photos come from the system camera app or the system photo picker. Its <strong>Share results</strong> button works as on iPhone: it sends the diagnostics log and the summary image described above, and only when you tap it.</p>
   </section>
 
   <section>
